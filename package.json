@@ -1,11 +1,12 @@
 {
   "name": "awesome-imperative-promise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An imperative API on top of promise, with cancellation support",
   "author": "slorber",
   "license": "MIT",
   "repository": "slorber/awesome-imperative-promise",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {
