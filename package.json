@@ -1,7 +1,7 @@
 {
   "name": "awesome-imperative-promise",
   "version": "1.0.0",
-  "description": "Offer an imperative API on top of promise, with cancellation support",
+  "description": "An imperative API on top of promise, with cancellation support",
   "author": "slorber",
   "license": "MIT",
   "repository": "slorber/awesome-imperative-promise",
@@ -20,10 +20,6 @@
     "prepare": "yarn run build"
   },
   "dependencies": {},
-  "peerDependencies": {
-    "prop-types": "^15.5.4",
-    "react-dom": "^15.0.0 || ^16.0.0"
-  },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
     "@types/jest": "^23.1.5",

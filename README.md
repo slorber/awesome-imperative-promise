@@ -10,7 +10,16 @@
 
 ```bash
 npm install --save awesome-imperative-promise
+// or
+yarn add awesome-imperative-promise
 ```
+
+## Features
+
+- Imperative methods to trigger promise resolve/reject
+- Imperative method to trigger promise cancellation (the promise will never resolve/reject)
+- Can wrap an existing promise or simply create a new one
+- Typescript native support
 
 ## Usage
 
@@ -34,12 +43,23 @@ reject(new Error(":s"));
 cancel();
 ```
 
-### Important note:
+## Important note:
 
 The returned promise can only resolve/reject/cancel once and will ignore further imperative calls like regular promises do.
 If you call `cancel()` and then call `resolve("val")` (or if the wrapped promise resolves), the returned promise will never resolve because it has been cancelled first.
 
+## Why
+
+I find this useful to be able to cancel the resolution of promises, and use this lib as an implementation detail in other libs I build, like [awesome-debounce-promise](https://github.com/slorber/awesome-debounce-promise).
+
+This is particularly useful in React apps where you want to ensure an async process is cancelled when component unmounts, to avoid triggering a setState and get a warning. See [isMounted() is an antipattern]
+(https://reactjs.org/blog/2015/12/16/ismounted-antipattern.html)
 
 ## License
 
 MIT © [slorber](https://github.com/slorber)
+
+# Hire a freelance expert
+
+Looking for a React/ReactNative freelance expert with more than 5 years production experience?
+Contact me from my [website](https://sebastienlorber.com/) or with [Twitter](https://twitter.com/sebastienlorber).
