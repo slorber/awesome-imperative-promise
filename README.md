@@ -25,13 +25,13 @@ yarn add awesome-imperative-promise
 
 ```js
 
-import { createImperativePromise } from "./index";
+import { createImperativePromise } from "awesome-imperative-promise";
 
 const wrappedPromise = fetch("url");
 
 // Wrap an existing promise and expose some additional imperative methods
 // The existingPromise paramter is optional and the returned promise with resolve/reject when the existing promise do
-const { promise, resolve, reject, cancel } = () => createImperativePromise(wrappedPromise);
+const { promise, resolve, reject, cancel } = createImperativePromise(wrappedPromise);
 
 // will make the returned promise resolved (not the wrapped one)
 resolve("some value");
