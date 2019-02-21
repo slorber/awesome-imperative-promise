@@ -4,11 +4,11 @@ type promiseState = "pending" | "resolved" | "rejected";
 
 const getPromiseState = async (promise: Promise<any>): promiseState => {
   const SecondResult = {};
-  const secondPromise = new Promise(resolve => resolve(SecondResult));
+  const secondPromise = new Promise<any>(resolve => resolve(SecondResult));
 
   let promiseState;
   try {
-    const result = await Promise.race([promise, secondPromise]);
+    const result = await Promise.race<any,any>([promise, secondPromise]);
     const isPending = result === SecondResult;
     promiseState = isPending ? "pending" : "resolved";
   } catch (e) {
